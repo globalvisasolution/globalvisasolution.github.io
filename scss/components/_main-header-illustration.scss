@@ -1,0 +1,14 @@
+// *******************************************
+//       MAIN HEADER - ILLUSTRATION
+// *******************************************
+
+.main-header__illustration {
+  grid-area: illustration;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    align-self: center;
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+  }
+}

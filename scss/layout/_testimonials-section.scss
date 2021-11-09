@@ -1,0 +1,109 @@
+// ******************************************
+//       MAIN CONTENT - TESTIMONIALS SECTION
+// ******************************************
+
+.testimonials-section {
+  @include flexbox($flow: column nowrap);
+  text-align: center;
+  width: 85%;
+  margin: 50px auto 75px;
+
+  @media screen and (min-width: 375px) {
+    max-width: 600px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 800px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 90%;
+    max-width: 1200px;
+  }
+  // ------------ Title ------------
+  &__title {
+    font-size: 3rem;
+    font-weight: 500;
+    @media screen and (min-width: 1024px) {
+      font-size: 4rem;
+    }
+  }
+  // --------  Description ---------
+  &__description {
+    width: 70%;
+    margin: 30px 0px 50px;
+    font-size: 1.6rem;
+    line-height: 25px;
+    color: $text-color-second;
+
+    @media screen and (min-width: 768px) {
+      max-width: 500px;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 2rem;
+      line-height: 35px;
+    }
+  }
+  // ------------  Testimonials wrapepr ------------
+  &__testimonials-wrapper {
+    @include flexbox($flow: column nowrap);
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+    }
+  }
+  // ------------  Testimonial --------------
+  &__testimonial {
+    width: 100%;
+    max-width: 350px;
+    height: 240px;
+    padding: 20px 25px;
+    border: 2px solid lighten($text-color-second, 70%);
+    border-radius: 10px;
+    font-size: 1.4rem;
+    background-color: #fff;
+    margin: 20px auto;
+    transition: transform 0.5s ease-in;
+
+    @media screen and (min-width: 768px) {
+      width: auto;
+      margin: 25px 10px;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+  // -------- Testimonial - Header ---------
+  &__testimonial-header {
+    @include flexbox($flow: row nowrap, $justify: space-between);
+    margin-bottom: 25px;
+  }
+  // -------- Testimonial - Profile photo --------
+  &__testimonial-profile-photo {
+    max-width: 100%;
+  }
+  // -------- Testimonial - Header info wrapper ---------
+  &__testimonial-header-info-wrapper {
+    margin-right: auto;
+    margin-left: 15px;
+    line-height: 20px;
+    text-align: left;
+  }
+  &__testimonial-name {
+    font-weight: 500;
+  }
+  &__testimonial-ubication {
+    color: lighten($text-color-second, 10%);
+    font-weight: 400;
+    display: block;
+  }
+  .fas {
+    color: $star-icon-color;
+    margin-left: 5px;
+  }
+  &__testimonial-description {
+    line-height: 25px;
+    text-align: left;
+  }
+}

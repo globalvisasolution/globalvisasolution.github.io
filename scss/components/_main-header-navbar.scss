@@ -1,0 +1,143 @@
+// *************************************
+//       MAIN HEADER - NAVBAR
+// *************************************
+
+.main-header__navbar {
+  @include flexbox($justify: space-between);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  transition: all 0.5s;
+  opacity: 0;
+  animation: show 2s 2s forwards;
+  z-index: 100000;
+
+  @keyframes show {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: 550px) {
+    padding: 2rem 8rem;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 2rem 7rem;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 2rem 10%;
+  }
+  @media screen and (min-width: 1600px) {
+    padding: 2rem 16%;
+  }
+
+  &.active {
+    background-color: #fff;
+    border-bottom: 3px solid $brand-icon-color;
+    box-shadow: 0px 2px 10px rgba($brand-icon-color, 0.5);
+  }
+  // ---------- Logo -------------
+  &-logo {
+    width: 40%;
+    max-width: 150px;
+
+    @media screen and (min-width: 1024px) {
+      max-width: 200px;
+    }
+  }
+  // ----------- Nav ------------
+  &-nav {
+    order: 2;
+    width: 100%;
+    margin: 15px auto;
+    list-style-type: none;
+    @include flexbox($flow: row nowrap, $justify: space-between);
+
+    @media screen and (min-width: 768px) {
+      max-width: 385px;
+      width: 50%;
+      order: 0;
+    }
+    @media screen and (min-width: 1024px) {
+      max-width: 500px;
+    }
+  }
+  // ----------- Link ------------
+  &-link {
+    font-size: 1.3rem;
+    color: $text-color-second;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.5s;
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 1.9rem;
+    }
+
+    &:hover {
+      color: $text-color-special;
+    }
+    &:active {
+      color: darken($text-color-special, 20%);
+      transform: scale(0.95);
+    }
+  }
+  //  --------- CTA ------------
+  &-cta {
+    order: 1;
+    width: 55%;
+    max-width: 230px;
+    font-size: 1.5rem;
+    @include flexbox($justify: space-between);
+
+    @media screen and (min-width: 768px) {
+      width: 25%;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 2rem;
+      max-width: 280px;
+    }
+    &-btn:first-of-type {
+      color: black;
+      font-weight: 500;
+      display: inline-block;
+      text-decoration: none;
+
+      transition: all 0.5s;
+      &:hover {
+        color: $text-color-special;
+      }
+      &:active {
+        color: darken($text-color-special, 20%);
+        transform: scale(0.95);
+      }
+    }
+    &-btn:last-of-type {
+      @include ghost-btn($ghost-pd-y: 7px);
+      border-width: 1px;
+      transition: all 0.5s;
+
+      @media screen and (min-width: 1024px) {
+        padding: 12px 0px;
+        font-size: 2rem;
+        max-width: 190px;
+      }
+
+      &:hover {
+        color: #fff;
+        background-color: $text-color-special;
+      }
+      &:active {
+        color: lighten($text-color-special, 20%);
+        transform: scale(0.95);
+      }
+    }
+  }
+}

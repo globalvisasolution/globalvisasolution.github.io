@@ -1,0 +1,125 @@
+// ******************************************
+//       MAIN CONTENT - PRICING SECTION
+// ******************************************
+
+.pricing-section {
+  @include flexbox($flow: column nowrap);
+  width: 85%;
+  text-align: center;
+  margin: 75px auto;
+  @media screen and (min-width: 375px) {
+    max-width: 530px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 90%;
+    max-width: 1000px;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 1200px;
+  }
+
+  // ------- Title ----------
+  &__title {
+    font-size: 3rem;
+    font-weight: 500;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 4rem;
+    }
+  }
+  // ------- Description --------
+  &__description {
+    margin: 20px 0px 50px;
+    font-size: 1.6rem;
+    line-height: 25px;
+    color: $text-color-second;
+
+    @media screen and (min-width: 768px) {
+      max-width: 600px;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 2rem;
+      line-height: 35px;
+      max-width: 600px;
+    }
+  }
+
+  // ------- Info Cards -----------
+  &__info-cards-wrapper {
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      @include flexbox($justify: space-evenly);
+    }
+  }
+  // ---------- Info card -------------
+  &__info-card {
+    @include flexbox($flow: column nowrap);
+    background-color: #fff;
+    width: 95%;
+    height: 750px;
+    border-radius: 10px;
+    margin: 10px auto 50px;
+    padding: 75px 0px 60px;
+    border: 2px solid lighten($text-color-second, 70%);
+    font-size: 1.6rem;
+
+    @media screen and (min-width: 375px) {
+      max-width: 355px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin: 25px 10px 25px 0px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin: 25px 10px 25px 0px;
+    }
+  }
+  // ---------- Info card - Title -------------
+  &__info-card-title {
+    margin: 30px auto;
+    font-size: 2rem;
+  }
+  // ---------- Info card - List ------------
+  &__info-card-list {
+    list-style-type: none;
+    text-align: left;
+    line-height: 40px;
+  }
+  .fas {
+    color: $check-icon-color;
+    margin-right: 20px;
+  }
+  // ---------- Info card - Price -------------
+  &__info-card-price {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-top: auto;
+    margin-bottom: 20px;
+    span {
+      color: #909090;
+      font-weight: 400;
+    }
+  }
+  // ---------- Info card - Button --------------
+  &__info-card-btn {
+    @include ghost-btn($ghost-max-width: 250px, $ghost-pd-y: 12px);
+    transition: all 0.5s;
+
+    @media screen and (min-width: 1024px) {
+      padding: 15px 0px;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $text-color-special;
+      box-shadow: 0px 5px 15px #f5383883;
+    }
+    &:active {
+      color: lighten($text-color-special, 20%);
+      transform: scale(0.95);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// *******************************
+//          MAIN FOOTER
+// *******************************
+
+.main-footer {
+  @include flexbox($flow: column nowrap);
+  font-size: 1.5rem;
+  width: 85%;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 1200px;
+  }
+  &-container {
+    width: 100%;
+    @include flexbox;
+    padding-bottom: 50px;
+  }
+}
